@@ -1,0 +1,46 @@
+@startuml
+
+title Solution TrainingLog
+
+node Nuget.org{
+    [TrainingLog.SDK]
+    [TrainingLog.Contract]
+    [SportsTracker.SDK]
+}
+
+node PowershellGallery.com{
+    [TrainingLog.Endomondo.Cmdlet]
+    [TrainingLog.Cmdlet]
+    [TrainingLog.SportsTracker.Cmdlet]
+    [SportTracker.Cmdlet]
+}
+
+node [Sports-Tracker.com]{
+    [api.sports-tracker.com]
+}
+
+
+node [productivitytools.tech]{
+    [TrainingLog.Api]
+    database "SQL\n" {
+    [Data]
+    }
+}
+
+
+ [TrainingLog.SportsTracker.Cmdlet] -down->[SportsTracker.SDK]
+ [TrainingLog.SportsTracker.Cmdlet] -down->[TrainingLog.SDK]
+ [SportsTracker.SDK] -down->[api.sports-tracker.com]
+ [TrainingLog.SDK] -down->[TrainingLog.Contract]
+ [TrainingLog.Endomondo.Cmdlet] -down->[TrainingLog.Contract]
+ [TrainingLog.Contract] -down->  [TrainingLog.Api]
+ [TrainingLog.SportsTracker.Cmdlet] -down-> [TrainingLog.Contract]
+ [TrainingLog.Cmdlet] -down-> [TrainingLog.Contract]
+ [TrainingLog.Api] -down->Data
+ [SportTracker.Cmdlet] -down->[SportsTracker.SDK]
+ 
+ 
+
+
+
+@enduml
