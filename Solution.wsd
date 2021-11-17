@@ -1,46 +1,37 @@
 @startuml
+title Solution GetTask
 
-title Solution TrainingLog
+node Azure{
+    [ProductivityTools.GetTask3.Reporting]
+}
+
+
+node Windows{
+    [ProductivityTools.GetTask3.TomatoTray]
+}
 
 node Nuget.org{
-    [TrainingLog.SDK]
-    [TrainingLog.Contract]
-    [SportsTracker.SDK]
+    [ProductivityTools.GetTask3.Contract]
+    [ProductivityTools.GetTask3.CoreObjects]
 }
 
 node PowershellGallery.com{
-    [TrainingLog.Endomondo.Cmdlet]
-    [TrainingLog.Cmdlet]
-    [TrainingLog.SportsTracker.Cmdlet]
-    [SportTracker.Cmdlet]
-}
-
-node [Sports-Tracker.com]{
-    [api.sports-tracker.com]
+    [ProductivityTools.GetTask3.Cmdlet]
 }
 
 
 node [productivitytools.tech]{
-    [TrainingLog.Api]
+    [ProductivityTools.GetTask3.Server]
     database "SQL\n" {
     [Data]
     }
 }
 
 
- [TrainingLog.SportsTracker.Cmdlet] -down->[SportsTracker.SDK]
- [TrainingLog.SportsTracker.Cmdlet] -down->[TrainingLog.SDK]
- [SportsTracker.SDK] -down->[api.sports-tracker.com]
- [TrainingLog.SDK] -down->[TrainingLog.Contract]
- [TrainingLog.Endomondo.Cmdlet] -down->[TrainingLog.Contract]
- [TrainingLog.Contract] -down->  [TrainingLog.Api]
- [TrainingLog.SportsTracker.Cmdlet] -down-> [TrainingLog.Contract]
- [TrainingLog.Cmdlet] -down-> [TrainingLog.Contract]
- [TrainingLog.Api] -down->Data
- [SportTracker.Cmdlet] -down->[SportsTracker.SDK]
- 
- 
-
-
-
+ [ProductivityTools.GetTask3.Cmdlet] -down->[ProductivityTools.GetTask3.Contract]
+ [ProductivityTools.GetTask3.Contract] -down->[ProductivityTools.GetTask3.Server]
+ [ProductivityTools.GetTask3.Server] -down->[Data]
+ [ProductivityTools.GetTask3.CoreObjects] -[ProductivityTools.GetTask3.Contract]
+ [ProductivityTools.GetTask3.CoreObjects] -[ProductivityTools.GetTask3.Cmdlet]
+ [ProductivityTools.GetTask3.CoreObjects] -[ProductivityTools.GetTask3.Server]
 @enduml
