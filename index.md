@@ -1,11 +1,10 @@
-Training Log is group of applications which helps to manage your sport activities. 
-Here you can find the list of the projects which it contain [Organization](https://github.com/ProductivityTools-TrainingLog)
+Task3 application is 3rd version of the task application. It is simple tool which allows to keep tasks in the hierachical structure
 
 # Projects
 
 
 
-# Training Log solution architecture
+# Task3 solution architecture
 
 ![Solution diagram](Images/SolutionDiagram.png)
 
