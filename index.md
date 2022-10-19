@@ -1,6 +1,18 @@
-Task3 application is 3rd version of the task application. It is simple tool which allows to keep tasks in the hierachical structure
+Task3 application is 3rd version of the task application.
 
-# Projects
+Main components
+- web client - allows to manage tasks through web
+
+![](Images/2022-10-19-13-15-08.png)
+
+- powershell client - allows to manage tasks through powershell
+
+![](Images/2022-10-19-13-16-24.png)
+
+- reporting - sends daily reports about tasks finished
+
+![](Images/2022-10-19-13-18-10.png)
+
 
 
 
@@ -19,5 +31,4 @@ Task3 application is 3rd version of the task application. It is simple tool whic
 - **Github PT.GetTask3** is repository for webapi. When push to repository is done, push to the jenkins webhook **jenkis.PT.Tech** is done
 - **Jenkins.PT.Tech** - address where all webhooks from github are sent. From here Jenkins catches them and invoke his actions.
 
-
-![](Images/2022-10-01-20-35-31.png)
+![](Images/2022-10-19-13-18-35.png)
